@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HeaderControls } from "./HeaderControls";
 import { mainNavLinks, socialLinks } from "./site-data";
 
 export function SiteHeader() {
@@ -27,6 +28,9 @@ export function SiteHeader() {
               </Link>
             ))}
           </div>
+          <div className="hidden xl:block">
+            <HeaderControls />
+          </div>
           <div className="hidden md:flex lg:hidden flex-wrap justify-end gap-x-5 gap-y-2">
             {mainNavLinks.slice(1).map((link) => (
               <Link
@@ -47,24 +51,30 @@ export function SiteHeader() {
             </Link>
           </div>
         </div>
-        <div className="flex md:hidden justify-between border-t border-stone-200/70 py-3 text-[0.68rem] uppercase tracking-[0.16em] text-stone-500">
-          <Link href="/coming-soon" className="hover:text-stone-900 transition-colors">
-            Launches
-          </Link>
-          <Link href="/blog" className="hover:text-stone-900 transition-colors">
-            Blog
-          </Link>
-          <Link href="/faq" className="hover:text-stone-900 transition-colors">
-            FAQ
-          </Link>
-          <a
-            href={socialLinks.tiktok}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-stone-900 transition-colors"
-          >
-            TikTok
-          </a>
+        <div className="hidden md:block xl:hidden border-t border-stone-200/70 py-3">
+          <HeaderControls />
+        </div>
+        <div className="md:hidden border-t border-stone-200/70 py-3">
+          <div className="flex justify-between text-[0.68rem] uppercase tracking-[0.16em] text-stone-500 mb-3">
+            <Link href="/coming-soon" className="hover:text-stone-900 transition-colors">
+              Launches
+            </Link>
+            <Link href="/blog" className="hover:text-stone-900 transition-colors">
+              Blog
+            </Link>
+            <Link href="/faq" className="hover:text-stone-900 transition-colors">
+              FAQ
+            </Link>
+            <a
+              href={socialLinks.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-stone-900 transition-colors"
+            >
+              TikTok
+            </a>
+          </div>
+          <HeaderControls />
         </div>
       </div>
     </nav>
