@@ -4,7 +4,7 @@ import Image from "next/image";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
 import { useI18n } from "./components/i18n";
-import { socialLinks } from "./components/site-data";
+import { getWhatsappOrderLink, socialLinks } from "./components/site-data";
 
 export default function Home() {
   const { dictionary } = useI18n();
@@ -94,7 +94,7 @@ export default function Home() {
                 <h3 className="text-stone-900 font-light mb-2 tracking-wide text-lg">{product}</h3>
                 <p className="text-stone-600 text-sm font-light tracking-wide mb-3">125dh</p>
                 <a
-                  href={socialLinks.whatsapp}
+                  href={getWhatsappOrderLink(product)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-2 border border-stone-900 text-stone-900 text-xs tracking-[0.2em] hover:bg-stone-900 hover:text-white transition-all duration-300"
@@ -271,7 +271,7 @@ export default function Home() {
               {dictionary.home.followTiktok}
             </a>
             <a
-              href={socialLinks.whatsapp}
+              href={getWhatsappOrderLink()}
               target="_blank"
               rel="noopener noreferrer"
               className="px-10 py-4 border border-white/60 text-white text-sm tracking-[0.25em] hover:bg-white hover:text-stone-900 transition-all duration-300 hover:scale-105 hover:shadow-xl backdrop-blur-sm"

@@ -1,8 +1,16 @@
 export const socialLinks = {
   instagram: "https://www.instagram.com/mouna_cosmetics?igsh=MWE1ejlmYmZvbnA0Yw==",
   tiktok: "https://www.tiktok.com/@mounacosmetics?_r=1&_t=ZS-96cvaL1Ti5P",
-  whatsapp: "https://wa.me/",
+  whatsapp: "https://wa.me/212618014756?text=Hello%20Mouna%20Cosmetics%2C%20I%20would%20like%20to%20order.",
 };
+
+export function getWhatsappOrderLink(productName?: string) {
+  const message = productName
+    ? `Hello Mouna Cosmetics, I would like to order ${productName}.`
+    : "Hello Mouna Cosmetics, I would like to order.";
+
+  return `https://wa.me/212618014756?text=${encodeURIComponent(message)}`;
+}
 
 export const mainNavLinks = [
   { href: "/", key: "home" },

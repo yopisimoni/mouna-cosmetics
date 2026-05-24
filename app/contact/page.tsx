@@ -3,14 +3,14 @@
 import { PageHero } from "../components/PageHero";
 import { PageShell } from "../components/PageShell";
 import { useI18n } from "../components/i18n";
-import { socialLinks } from "../components/site-data";
+import { getWhatsappOrderLink, socialLinks } from "../components/site-data";
 
 export default function ContactPage() {
   const { dictionary } = useI18n();
   const contactLinks = [
     { label: dictionary.common.instagram, href: socialLinks.instagram, note: dictionary.contact.instagramNote },
     { label: dictionary.common.tiktok, href: socialLinks.tiktok, note: dictionary.contact.tiktokNote },
-    { label: dictionary.common.whatsapp, href: socialLinks.whatsapp, note: dictionary.contact.whatsappNote },
+    { label: dictionary.common.whatsapp, href: getWhatsappOrderLink(), note: dictionary.contact.whatsappNote },
   ];
 
   return (
@@ -47,7 +47,7 @@ export default function ContactPage() {
               {dictionary.contact.helpText}
             </p>
             <a
-              href={socialLinks.whatsapp}
+              href={getWhatsappOrderLink()}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-10 py-4 bg-white text-stone-900 text-sm tracking-[0.25em] hover:bg-stone-100 transition-all duration-300"

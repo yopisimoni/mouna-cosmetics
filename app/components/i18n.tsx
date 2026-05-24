@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, ReactNode, useContext, useEffect, useMemo, useSyncExternalStore } from "react";
+import { createContext, ReactNode, useContext, useEffect, useMemo, useState } from "react";
 
 export const languages = [
   { code: "en", label: "English", shortLabel: "EN", dir: "ltr" },
@@ -25,20 +25,6 @@ function getStoredLanguage(): LanguageCode {
 
   const storedLanguage = window.localStorage.getItem("mouna-language");
   return isLanguageCode(storedLanguage) ? storedLanguage : fallbackLanguage;
-}
-
-function subscribeToLanguageChange(callback: () => void) {
-  window.addEventListener("storage", callback);
-  window.addEventListener("mouna-language-change", callback);
-
-  return () => {
-    window.removeEventListener("storage", callback);
-    window.removeEventListener("mouna-language-change", callback);
-  };
-}
-
-function getLanguageServerSnapshot(): LanguageCode {
-  return fallbackLanguage;
 }
 
 export const dictionaries = {
@@ -589,11 +575,7 @@ type LanguageContextValue = {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const language = useSyncExternalStore(
-    subscribeToLanguageChange,
-    getStoredLanguage,
-    getLanguageServerSnapshot,
-  );
+  const [language, setLanguageState] = useState<LanguageCode>(getStoredLanguage);
 
   const selectedLanguage = useMemo(
     () => languages.find((item) => item.code === language) ?? languages[0],
@@ -603,6 +585,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     document.documentElement.lang = language;
     document.documentElement.dir = selectedLanguage.dir;
+    window.localStorage.setItem("mouna-language", language);
   }, [language, selectedLanguage.dir]);
 
   const value = useMemo(
@@ -612,8 +595,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       dictionary: dictionaries[language],
       selectedLanguage,
       setLanguage: (nextLanguage: LanguageCode) => {
-        window.localStorage.setItem("mouna-language", nextLanguage);
-        window.dispatchEvent(new Event("mouna-language-change"));
+        setLanguageState(nextLanguage);
       },
     }),
     [language, selectedLanguage],

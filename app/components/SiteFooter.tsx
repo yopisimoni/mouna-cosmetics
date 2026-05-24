@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useI18n } from "./i18n";
-import { footerLinks, socialLinks } from "./site-data";
+import { footerLinks, getWhatsappOrderLink, socialLinks } from "./site-data";
 
 export function SiteFooter() {
   const { dictionary } = useI18n();
@@ -60,7 +60,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <a
-                  href={socialLinks.whatsapp}
+                  href={getWhatsappOrderLink()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors duration-300"

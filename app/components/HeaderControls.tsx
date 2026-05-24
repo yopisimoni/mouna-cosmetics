@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useSyncExternalStore } from "react";
+import { useEffect, useState } from "react";
 import { LanguageCode, languages, useI18n } from "./i18n";
 
 type Theme = "light" | "dark";
@@ -14,36 +14,13 @@ function getStoredTheme(): Theme {
   return storedTheme === "dark" || storedTheme === "light" ? storedTheme : "light";
 }
 
-function subscribeToThemeChange(callback: () => void) {
-  window.addEventListener("storage", callback);
-  window.addEventListener("mouna-theme-change", callback);
-
-  return () => {
-    window.removeEventListener("storage", callback);
-    window.removeEventListener("mouna-theme-change", callback);
-  };
-}
-
-function getThemeServerSnapshot(): Theme {
-  return "light";
-}
-
-function setStoredTheme(theme: Theme) {
-  window.localStorage.setItem("mouna-theme", theme);
-  document.documentElement.classList.toggle("dark", theme === "dark");
-  window.dispatchEvent(new Event("mouna-theme-change"));
-}
-
 export function HeaderControls() {
   const { dictionary, language, selectedLanguage, setLanguage } = useI18n();
-  const theme = useSyncExternalStore(
-    subscribeToThemeChange,
-    getStoredTheme,
-    getThemeServerSnapshot,
-  );
+  const [theme, setTheme] = useState<Theme>(getStoredTheme);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
+    window.localStorage.setItem("mouna-theme", theme);
   }, [theme]);
 
   const handleLanguageChange = (value: string) => {
@@ -51,7 +28,7 @@ export function HeaderControls() {
   };
 
   const handleThemeToggle = () => {
-    setStoredTheme(theme === "dark" ? "light" : "dark");
+    setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"));
   };
 
   return (
