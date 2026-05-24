@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
+import Script from "next/script";
 import { LanguageProvider } from "./components/i18n";
 import "./globals.css";
 
@@ -32,11 +33,9 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `try{var l=localStorage.getItem('mouna-language')||'en';document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';document.documentElement.classList.toggle('dark',localStorage.getItem('mouna-theme')==='dark')}catch(e){}`,
-          }}
-        />
+        <Script id="mouna-preferences" strategy="beforeInteractive">
+          {`try{var l=localStorage.getItem('mouna-language')||'en';document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';document.documentElement.classList.toggle('dark',localStorage.getItem('mouna-theme')==='dark')}catch(e){}`}
+        </Script>
       </head>
       <body className="min-h-full flex flex-col font-sans">
         <LanguageProvider>{children}</LanguageProvider>
