@@ -12,18 +12,23 @@ export function getWhatsappOrderLink(productName?: string) {
   return `https://wa.me/212618014756?text=${encodeURIComponent(message)}`;
 }
 
+export function getWhatsappMessageLink(message: string) {
+  return `https://wa.me/212618014756?text=${encodeURIComponent(message)}`;
+}
+
 export const mainNavLinks = [
-  { href: "/", key: "home" },
-  { href: "/about", key: "about" },
-  { href: "/coming-soon", key: "launches" },
-  { href: "/blog", key: "blog" },
-  { href: "/faq", key: "faq" },
-  { href: "/contact", key: "contact" },
+  { href: "/shop", label: "Shop All" },
+  { href: "/shop/lips", label: "Lips" },
+  { href: "/shop/eyes", label: "Eyes" },
+  { href: "/shop/face", label: "Face" },
+  { href: "/shop/skin-body", label: "Skin & Body" },
+  { href: "/coming-soon", label: "More" },
 ] as const;
 
 export const footerLinks = [
+  { href: "/shop", key: "products" },
+  { href: "/shop/lips", label: "Lips" },
   { href: "/about", key: "ourStory" },
-  { href: "/#products", key: "products" },
   { href: "/coming-soon", key: "comingSoon" },
   { href: "/blog", key: "blog" },
   { href: "/faq", key: "faq" },
