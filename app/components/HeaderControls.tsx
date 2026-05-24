@@ -11,6 +11,8 @@ const languages = [
 
 type Theme = "light" | "dark";
 
+// Phase 4 intentionally keeps language selection UI-only. The stored value is
+// ready for a later translation pass, but it does not localize page content yet.
 function getStoredLanguage() {
   if (typeof window === "undefined") {
     return "en";

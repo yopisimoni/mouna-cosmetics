@@ -29,35 +29,38 @@ section,
 footer,
 a,
 button,
-select,
-div,
-p,
-h1,
-h2,
-h3,
-span {
+select {
   transition-property: background-color, border-color, color;
   transition-duration: 300ms;
 }
 
-.dark .bg-stone-50,
-.dark .bg-stone-50\/50,
-.dark .bg-white,
-.dark .bg-white\/70 {
+.dark .bg-stone-50 {
   background-color: #0c0a09;
 }
 
+.dark .bg-stone-50\/50 {
+  background-color: #120f0d;
+}
+
+.dark .bg-white {
+  background-color: #15110f;
+}
+
+.dark .bg-white\/70 {
+  background-color: rgb(21 17 15 / 0.88);
+}
+
 .dark .bg-stone-100 {
-  background-color: #1c1917;
+  background-color: #211c19;
 }
 
 .dark .bg-stone-900,
 .dark .bg-stone-950 {
-  background-color: #050505;
+  background-color: #060504;
 }
 
 .dark .text-stone-900 {
-  color: #f5f5f4;
+  color: #fafaf9;
 }
 
 .dark .text-stone-700,
@@ -74,11 +77,15 @@ span {
   color: #d6d3d1;
 }
 
+.dark .text-white {
+  color: #fafaf9;
+}
+
 .dark .border-stone-200,
 .dark .border-stone-200\/50,
 .dark .border-stone-200\/70,
 .dark .border-stone-300 {
-  border-color: rgb(68 64 60 / 0.8);
+  border-color: rgb(87 83 78 / 0.68);
 }
 
 .dark .border-stone-400,
@@ -86,27 +93,74 @@ span {
   border-color: #d6d3d1;
 }
 
+.dark .shadow-xl,
+.dark .shadow-2xl {
+  box-shadow: 0 22px 55px rgb(0 0 0 / 0.45);
+}
+
+.dark a.bg-white,
+.dark button.bg-white,
+.dark a.bg-stone-100,
+.dark button.bg-stone-100 {
+  background-color: #f5f5f4;
+  color: #1c1917;
+}
+
+.dark a.bg-stone-900,
+.dark button.bg-stone-900 {
+  background-color: #fafaf9;
+  color: #1c1917;
+}
+
+.dark a.border-stone-900,
+.dark button.border-stone-900 {
+  border-color: #d6d3d1;
+  color: #fafaf9;
+}
+
+.dark a.border-white\/60,
+.dark button.border-white\/60 {
+  border-color: rgb(245 245 244 / 0.72);
+  color: #fafaf9;
+}
+
+.dark a.hover\:bg-stone-900:hover,
+.dark button.hover\:bg-stone-900:hover,
+.dark a.hover\:bg-stone-800:hover,
+.dark button.hover\:bg-stone-800:hover {
+  background-color: #f5f5f4;
+  color: #1c1917;
+}
+
+.dark a.hover\:bg-white:hover,
+.dark button.hover\:bg-white:hover,
+.dark a.hover\:bg-stone-100:hover,
+.dark button.hover\:bg-stone-100:hover {
+  background-color: #fafaf9;
+  color: #1c1917;
+}
+
+.dark a.hover\:border-stone-900:hover,
+.dark button.hover\:border-stone-900:hover,
+.dark .hover\:border-stone-400:hover {
+  border-color: #fafaf9;
+}
+
 .dark .hover\:text-stone-900:hover,
 .dark .hover\:text-white:hover {
   color: #ffffff;
 }
 
-.dark .hover\:border-stone-900:hover {
-  border-color: #ffffff;
+.dark a.hover\:bg-white:hover.hover\:text-stone-900,
+.dark button.hover\:bg-white:hover.hover\:text-stone-900,
+.dark a.hover\:bg-stone-900:hover.hover\:text-white,
+.dark button.hover\:bg-stone-900:hover.hover\:text-white {
+  color: #1c1917;
 }
 
-.dark .hover\:bg-stone-900:hover,
-.dark .hover\:bg-stone-800:hover {
-  background-color: #292524;
-}
-
-.dark .hover\:bg-white:hover,
-.dark .hover\:bg-stone-100:hover {
-  background-color: #f5f5f4;
-}
-
-.dark .hover\:text-stone-900:hover {
-  color: #ffffff;
+.dark select,
+.dark button {
+  color-scheme: dark;
 }
 
 .dark select option {
