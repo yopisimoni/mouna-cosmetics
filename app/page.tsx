@@ -34,13 +34,13 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1920&q=80"
-            alt="Luxury Beauty"
+            src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.13 (1).jpeg"
+            alt="Mouna Cosmetics Luxury Beauty"
             fill
-            className="object-cover scale-105"
+            className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-stone-900/20 via-stone-900/30 to-stone-900/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-stone-900/30 via-stone-900/40 to-stone-900/60"></div>
         </div>
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto animate-fade-in">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-white mb-8 tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] font-['var(--font-playfair)'] leading-tight">
@@ -73,37 +73,233 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Products Placeholder */}
+      {/* Featured Products */}
       <section id="products" className="py-24 sm:py-36 bg-stone-50/50">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <h2 className="text-4xl sm:text-5xl font-light text-stone-900 mb-16 text-center tracking-[0.15em] font-['var(--font-playfair)']">Featured Products</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="bg-white p-8 text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <div className="aspect-[3/4] bg-gradient-to-br from-stone-100 to-stone-200 mb-6 flex items-center justify-center overflow-hidden">
-                  <div className="w-20 h-20 rounded-full bg-stone-300/50 group-hover:scale-110 transition-transform duration-500"></div>
-                </div>
-                <h3 className="text-stone-900 font-light mb-2 tracking-wide text-lg">Coming Soon</h3>
-                <p className="text-stone-500 text-sm font-light tracking-wide">Luxury skincare collection</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-6 text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div className="aspect-[3/4] mb-6 flex items-center justify-center overflow-hidden bg-stone-100">
+                <Image
+                  src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.04.jpeg"
+                  alt="Aura Lip Gloss"
+                  width={300}
+                  height={400}
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
-            ))}
+              <h3 className="text-stone-900 font-light mb-2 tracking-wide text-lg">Aura Lip Gloss</h3>
+              <p className="text-stone-600 text-sm font-light tracking-wide mb-3">125dh</p>
+              <a
+                href="https://wa.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-2 border border-stone-900 text-stone-900 text-xs tracking-[0.2em] hover:bg-stone-900 hover:text-white transition-all duration-300"
+              >
+                ORDER VIA WHATSAPP
+              </a>
+            </div>
+            <div className="bg-white p-6 text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div className="aspect-[3/4] mb-6 flex items-center justify-center overflow-hidden bg-stone-100">
+                <Image
+                  src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.05.jpeg"
+                  alt="Candy Lip Gloss"
+                  width={300}
+                  height={400}
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <h3 className="text-stone-900 font-light mb-2 tracking-wide text-lg">Candy Lip Gloss</h3>
+              <p className="text-stone-600 text-sm font-light tracking-wide mb-3">125dh</p>
+              <a
+                href="https://wa.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-2 border border-stone-900 text-stone-900 text-xs tracking-[0.2em] hover:bg-stone-900 hover:text-white transition-all duration-300"
+              >
+                ORDER VIA WHATSAPP
+              </a>
+            </div>
+            <div className="bg-white p-6 text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div className="aspect-[3/4] mb-6 flex items-center justify-center overflow-hidden bg-stone-100">
+                <Image
+                  src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.06.jpeg"
+                  alt="Amour Lip Gloss"
+                  width={300}
+                  height={400}
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <h3 className="text-stone-900 font-light mb-2 tracking-wide text-lg">Amour Lip Gloss</h3>
+              <p className="text-stone-600 text-sm font-light tracking-wide mb-3">125dh</p>
+              <a
+                href="https://wa.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-2 border border-stone-900 text-stone-900 text-xs tracking-[0.2em] hover:bg-stone-900 hover:text-white transition-all duration-300"
+              >
+                ORDER VIA WHATSAPP
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Instagram Gallery Placeholder */}
+      {/* Product Bundles */}
+      <section className="py-24 sm:py-36 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <h2 className="text-4xl sm:text-5xl font-light text-stone-900 mb-16 text-center tracking-[0.15em] font-['var(--font-playfair)']">Bundle & Save</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-stone-50 p-6 text-center border border-stone-200 hover:border-stone-400 transition-all duration-300">
+              <h3 className="text-stone-900 font-light mb-2 tracking-wide text-lg">2 Glosses</h3>
+              <p className="text-stone-600 text-sm font-light tracking-wide mb-1">225dh</p>
+              <p className="text-stone-400 text-xs font-light tracking-wide">Save 25dh</p>
+            </div>
+            <div className="bg-stone-50 p-6 text-center border border-stone-200 hover:border-stone-400 transition-all duration-300">
+              <h3 className="text-stone-900 font-light mb-2 tracking-wide text-lg">3 Glosses</h3>
+              <p className="text-stone-600 text-sm font-light tracking-wide mb-1">299dh</p>
+              <p className="text-stone-400 text-xs font-light tracking-wide">Save 76dh</p>
+            </div>
+            <div className="bg-stone-50 p-6 text-center border border-stone-200 hover:border-stone-400 transition-all duration-300">
+              <h3 className="text-stone-900 font-light mb-2 tracking-wide text-lg">Palette</h3>
+              <p className="text-stone-600 text-sm font-light tracking-wide mb-1">299dh</p>
+            </div>
+            <div className="bg-stone-50 p-6 text-center border border-stone-200 hover:border-stone-400 transition-all duration-300">
+              <h3 className="text-stone-900 font-light mb-2 tracking-wide text-lg">Palette + 1 Gloss</h3>
+              <p className="text-stone-600 text-sm font-light tracking-wide mb-1">395dh</p>
+              <p className="text-stone-400 text-xs font-light tracking-wide">Save 29dh</p>
+            </div>
+            <div className="bg-stone-50 p-6 text-center border border-stone-200 hover:border-stone-400 transition-all duration-300">
+              <h3 className="text-stone-900 font-light mb-2 tracking-wide text-lg">Palette + 2 Glosses</h3>
+              <p className="text-stone-600 text-sm font-light tracking-wide mb-1">449dh</p>
+              <p className="text-stone-400 text-xs font-light tracking-wide">Save 100dh</p>
+            </div>
+            <div className="bg-stone-50 p-6 text-center border border-stone-200 hover:border-stone-400 transition-all duration-300">
+              <h3 className="text-stone-900 font-light mb-2 tracking-wide text-lg">Palette + 3 Glosses</h3>
+              <p className="text-stone-600 text-sm font-light tracking-wide mb-1">499dh</p>
+              <p className="text-stone-400 text-xs font-light tracking-wide">Save 175dh</p>
+            </div>
+            <div className="bg-stone-900 p-6 text-center col-span-1 sm:col-span-2">
+              <h3 className="text-white font-light mb-2 tracking-wide text-lg">Free Shipping</h3>
+              <p className="text-stone-300 text-sm font-light tracking-wide">On orders from 395dh</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Benefits */}
+      <section className="py-24 sm:py-36 bg-stone-50/50">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <h2 className="text-4xl sm:text-5xl font-light text-stone-900 mb-16 text-center tracking-[0.15em] font-['var(--font-playfair)']">Why Mouna?</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-8 text-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-stone-100 flex items-center justify-center">
+                <svg className="w-8 h-8 text-stone-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+              </div>
+              <h3 className="text-stone-900 font-light mb-3 tracking-wide text-lg">High-Shine Finish</h3>
+              <p className="text-stone-600 text-sm font-light tracking-wide">Glossy finish without the sticky feeling</p>
+            </div>
+            <div className="bg-white p-8 text-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-stone-100 flex items-center justify-center">
+                <svg className="w-8 h-8 text-stone-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 className="text-stone-900 font-light mb-3 tracking-wide text-lg">Shea Butter Enriched</h3>
+              <p className="text-stone-600 text-sm font-light tracking-wide">Nourishes and hydrates your lips</p>
+            </div>
+            <div className="bg-white p-8 text-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-stone-100 flex items-center justify-center">
+                <svg className="w-8 h-8 text-stone-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 className="text-stone-900 font-light mb-3 tracking-wide text-lg">Clean Formula</h3>
+              <p className="text-stone-600 text-sm font-light tracking-wide">Vegan, cruelty-free, gluten-free & paraben-free</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery */}
       <section id="gallery" className="py-24 sm:py-36 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <h2 className="text-4xl sm:text-5xl font-light text-stone-900 mb-16 text-center tracking-[0.15em] font-['var(--font-playfair)']">Gallery</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="aspect-square bg-gradient-to-br from-stone-100 to-stone-200 hover:scale-105 transition-transform duration-500 cursor-pointer"></div>
-            <div className="aspect-square bg-gradient-to-br from-stone-200 to-stone-300 hover:scale-105 transition-transform duration-500 cursor-pointer"></div>
-            <div className="aspect-square bg-gradient-to-br from-stone-150 to-stone-250 hover:scale-105 transition-transform duration-500 cursor-pointer"></div>
-            <div className="aspect-square bg-gradient-to-br from-stone-100 to-stone-200 hover:scale-105 transition-transform duration-500 cursor-pointer"></div>
-            <div className="aspect-square bg-gradient-to-br from-stone-200 to-stone-300 hover:scale-105 transition-transform duration-500 cursor-pointer"></div>
-            <div className="aspect-square bg-gradient-to-br from-stone-100 to-stone-200 hover:scale-105 transition-transform duration-500 cursor-pointer"></div>
-            <div className="aspect-square bg-gradient-to-br from-stone-150 to-stone-250 hover:scale-105 transition-transform duration-500 cursor-pointer"></div>
-            <div className="aspect-square bg-gradient-to-br from-stone-200 to-stone-300 hover:scale-105 transition-transform duration-500 cursor-pointer"></div>
+            <div className="aspect-square overflow-hidden hover:scale-105 transition-transform duration-500 cursor-pointer">
+              <Image
+                src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.07.jpeg"
+                alt="Gallery 1"
+                width={400}
+                height={400}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden hover:scale-105 transition-transform duration-500 cursor-pointer">
+              <Image
+                src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.08.jpeg"
+                alt="Gallery 2"
+                width={400}
+                height={400}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden hover:scale-105 transition-transform duration-500 cursor-pointer">
+              <Image
+                src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.09.jpeg"
+                alt="Gallery 3"
+                width={400}
+                height={400}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden hover:scale-105 transition-transform duration-500 cursor-pointer">
+              <Image
+                src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.10.jpeg"
+                alt="Gallery 4"
+                width={400}
+                height={400}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden hover:scale-105 transition-transform duration-500 cursor-pointer">
+              <Image
+                src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.11.jpeg"
+                alt="Gallery 5"
+                width={400}
+                height={400}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden hover:scale-105 transition-transform duration-500 cursor-pointer">
+              <Image
+                src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.13.jpeg"
+                alt="Gallery 6"
+                width={400}
+                height={400}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden hover:scale-105 transition-transform duration-500 cursor-pointer">
+              <Image
+                src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.14.jpeg"
+                alt="Gallery 7"
+                width={400}
+                height={400}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden hover:scale-105 transition-transform duration-500 cursor-pointer">
+              <Image
+                src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.14 (1).jpeg"
+                alt="Gallery 8"
+                width={400}
+                height={400}
+                className="object-cover w-full h-full"
+              />
+            </div>
           </div>
         </div>
       </section>
