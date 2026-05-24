@@ -11,51 +11,56 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-stone-200/60 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-5 sm:px-7 lg:px-10 xl:px-12">
-        {/* Desktop: left nav | centered logo | right nav + controls + cart */}
+        {/* Desktop: single row — left nav | centered logo | right icons */}
         <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] items-center h-14">
-          {/* Left nav */}
-          <div className="flex items-center gap-6 xl:gap-8">
-            {mainNavLinks.slice(0, 3).map((link) => (
+          {/* Left nav — all links */}
+          <div className="flex items-center gap-5 xl:gap-6">
+            {mainNavLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="whitespace-nowrap text-stone-600 hover:text-stone-900 transition-all duration-300 text-[0.8rem] tracking-[0.12em] font-normal"
+                className="whitespace-nowrap text-stone-600 hover:text-stone-900 transition-all duration-300 text-[0.78rem] tracking-[0.12em] font-normal"
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          {/* Centered logo */}
+          {/* Centered logo — bold, prominent */}
           <Link href="/" className="justify-self-center text-center">
-            <div className="flex flex-col items-center">
-              <span className="text-xl font-light tracking-[0.25em] text-stone-900 font-['var(--font-playfair)'] leading-none">
-                {dictionary.common.brand}
-              </span>
-              <span className="text-[0.5rem] tracking-[0.38em] text-stone-400 mt-0.5 uppercase font-light">
-                {dictionary.common.cosmetics}
-              </span>
-            </div>
+            <span className="text-2xl sm:text-3xl font-bold tracking-[0.18em] text-stone-900 font-['var(--font-playfair)'] leading-none">
+              {dictionary.common.brand}
+            </span>
           </Link>
 
-          {/* Right nav + controls + cart */}
-          <div className="flex items-center justify-end gap-6 xl:gap-8">
-            {mainNavLinks.slice(3).map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="whitespace-nowrap text-stone-600 hover:text-stone-900 transition-all duration-300 text-[0.8rem] tracking-[0.12em] font-normal"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <div className="hidden xl:flex items-center gap-2">
-              <HeaderControls />
-            </div>
+          {/* Right icons — controls + account + search + cart */}
+          <div className="flex items-center justify-end gap-3 xl:gap-4">
+            <HeaderControls />
+            {/* Account icon placeholder */}
+            <button
+              type="button"
+              aria-label="Account"
+              className="text-stone-500 hover:text-stone-900 transition-colors"
+            >
+              <svg className="h-[18px] w-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </button>
+            {/* Search icon placeholder */}
+            <button
+              type="button"
+              aria-label="Search"
+              className="text-stone-500 hover:text-stone-900 transition-colors"
+            >
+              <svg className="h-[18px] w-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </button>
+            {/* Cart icon */}
             <Link
               href="/product/lip-gloss"
               aria-label="Cart coming soon. Order via WhatsApp."
-              className="relative text-stone-600 hover:text-stone-900 transition-colors"
+              className="relative text-stone-500 hover:text-stone-900 transition-colors"
             >
               <span className="sr-only">Cart coming soon</span>
               <svg className="h-[18px] w-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
@@ -79,23 +84,27 @@ export function SiteHeader() {
               </Link>
             </div>
             <Link href="/" className="text-center">
-              <div className="flex flex-col items-center">
-                <span className="text-base font-light tracking-[0.25em] text-stone-900 font-['var(--font-playfair)'] leading-none">
-                  {dictionary.common.brand}
-                </span>
-                <span className="text-[0.48rem] tracking-[0.38em] text-stone-400 mt-0.5 uppercase font-light">
-                  {dictionary.common.cosmetics}
-                </span>
-              </div>
+              <span className="text-lg font-bold tracking-[0.18em] text-stone-900 font-['var(--font-playfair)'] leading-none">
+                {dictionary.common.brand}
+              </span>
             </Link>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                aria-label="Search"
+                className="text-stone-500 hover:text-stone-900 transition-colors"
+              >
+                <svg className="h-[16px] w-[16px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </button>
               <Link
                 href="/product/lip-gloss"
                 aria-label="Cart coming soon. Order via WhatsApp."
-                className="relative text-stone-600 hover:text-stone-900 transition-colors"
+                className="relative text-stone-500 hover:text-stone-900 transition-colors"
               >
                 <span className="sr-only">Cart coming soon</span>
-                <svg className="h-[18px] w-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
+                <svg className="h-[16px] w-[16px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 10-8 0v4M5 9h14l-1 11H6L5 9z" />
                 </svg>
               </Link>
