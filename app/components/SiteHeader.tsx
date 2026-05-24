@@ -1,8 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import { HeaderControls } from "./HeaderControls";
+import { useI18n } from "./i18n";
 import { mainNavLinks, socialLinks } from "./site-data";
 
 export function SiteHeader() {
+  const { dictionary } = useI18n();
+
   return (
     <nav className="sticky top-0 z-50 bg-stone-50/95 backdrop-blur-md border-b border-stone-200/50 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -10,10 +15,10 @@ export function SiteHeader() {
           <Link href="/" className="flex-shrink-0">
             <div className="flex flex-col">
               <span className="text-2xl font-light tracking-[0.25em] text-stone-900 font-['var(--font-playfair)'] leading-none">
-                MOUNA
+                {dictionary.common.brand}
               </span>
               <span className="text-[0.6rem] tracking-[0.4em] text-stone-500 mt-1 uppercase">
-                Cosmetics
+                {dictionary.common.cosmetics}
               </span>
             </div>
           </Link>
@@ -24,7 +29,7 @@ export function SiteHeader() {
                 href={link.href}
                 className="text-stone-600 hover:text-stone-900 transition-all duration-300 text-sm tracking-[0.15em] font-light"
               >
-                {link.label}
+                {dictionary.nav[link.key]}
               </Link>
             ))}
           </div>
@@ -38,16 +43,16 @@ export function SiteHeader() {
                 href={link.href}
                 className="text-stone-600 hover:text-stone-900 transition-all duration-300 text-xs tracking-[0.14em] font-light"
               >
-                {link.label}
+                {dictionary.nav[link.key]}
               </Link>
             ))}
           </div>
           <div className="flex md:hidden gap-4 text-xs tracking-[0.18em] text-stone-600">
             <Link href="/about" className="hover:text-stone-900 transition-colors">
-              About
+              {dictionary.nav.about}
             </Link>
             <Link href="/contact" className="hover:text-stone-900 transition-colors">
-              Contact
+              {dictionary.nav.contact}
             </Link>
           </div>
         </div>
@@ -57,13 +62,13 @@ export function SiteHeader() {
         <div className="md:hidden border-t border-stone-200/70 py-3">
           <div className="flex justify-between text-[0.68rem] uppercase tracking-[0.16em] text-stone-500 mb-3">
             <Link href="/coming-soon" className="hover:text-stone-900 transition-colors">
-              Launches
+              {dictionary.nav.launches}
             </Link>
             <Link href="/blog" className="hover:text-stone-900 transition-colors">
-              Blog
+              {dictionary.nav.blog}
             </Link>
             <Link href="/faq" className="hover:text-stone-900 transition-colors">
-              FAQ
+              {dictionary.nav.faq}
             </Link>
             <a
               href={socialLinks.tiktok}
@@ -71,7 +76,7 @@ export function SiteHeader() {
               rel="noopener noreferrer"
               className="hover:text-stone-900 transition-colors"
             >
-              TikTok
+              {dictionary.common.tiktok}
             </a>
           </div>
           <HeaderControls />

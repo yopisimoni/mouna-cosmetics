@@ -1,24 +1,24 @@
 export const socialLinks = {
-  instagram: "https://instagram.com",
+  instagram: "https://www.instagram.com/mouna_cosmetics?igsh=MWE1ejlmYmZvbnA0Yw==",
   tiktok: "https://www.tiktok.com/@mounacosmetics?_r=1&_t=ZS-96cvaL1Ti5P",
   whatsapp: "https://wa.me/",
 };
 
 export const mainNavLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/coming-soon", label: "Launches" },
-  { href: "/blog", label: "Blog" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Contact" },
-];
+  { href: "/", key: "home" },
+  { href: "/about", key: "about" },
+  { href: "/coming-soon", key: "launches" },
+  { href: "/blog", key: "blog" },
+  { href: "/faq", key: "faq" },
+  { href: "/contact", key: "contact" },
+] as const;
 
 export const footerLinks = [
-  { href: "/about", label: "Our Story" },
-  { href: "/#products", label: "Products" },
-  { href: "/coming-soon", label: "Coming Soon" },
-  { href: "/blog", label: "Blog" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/privacy-policy", label: "Privacy Policy" },
-  { href: "/terms-of-use", label: "Terms of Use" },
-];
+  { href: "/about", key: "ourStory" },
+  { href: "/#products", key: "products" },
+  { href: "/coming-soon", key: "comingSoon" },
+  { href: "/blog", key: "blog" },
+  { href: "/faq", key: "faq" },
+  { href: "/privacy-policy", key: "privacyPolicy" },
+  { href: "/terms-of-use", key: "termsOfUse" },
+] as const;

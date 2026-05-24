@@ -1,20 +1,24 @@
+"use client";
+
 import { PageHero } from "../components/PageHero";
 import { PageShell } from "../components/PageShell";
+import { useI18n } from "../components/i18n";
 import { socialLinks } from "../components/site-data";
 
-const contactLinks = [
-  { label: "Instagram", href: socialLinks.instagram, note: "Follow launches, shade looks, and brand updates." },
-  { label: "TikTok", href: socialLinks.tiktok, note: "Watch gloss swatches, routines, and quick product moments." },
-  { label: "WhatsApp", href: socialLinks.whatsapp, note: "Ask about availability, delivery, and placing an order." },
-];
-
 export default function ContactPage() {
+  const { dictionary } = useI18n();
+  const contactLinks = [
+    { label: dictionary.common.instagram, href: socialLinks.instagram, note: dictionary.contact.instagramNote },
+    { label: dictionary.common.tiktok, href: socialLinks.tiktok, note: dictionary.contact.tiktokNote },
+    { label: dictionary.common.whatsapp, href: socialLinks.whatsapp, note: dictionary.contact.whatsappNote },
+  ];
+
   return (
     <PageShell>
       <PageHero
-        eyebrow="Contact"
-        title="Speak with Mouna"
-        description="For orders, shade help, delivery questions, or collaboration notes, reach out through the channels below."
+        eyebrow={dictionary.contact.eyebrow}
+        title={dictionary.contact.title}
+        description={dictionary.contact.description}
       />
       <section className="py-20 sm:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -35,12 +39,12 @@ export default function ContactPage() {
             ))}
           </div>
           <div className="bg-stone-900 text-white p-8 sm:p-12 text-center">
-            <p className="text-xs uppercase tracking-[0.3em] text-stone-300 mb-5">Simple Contact</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-stone-300 mb-5">{dictionary.contact.simple}</p>
             <h2 className="text-3xl sm:text-4xl font-light mb-6 tracking-[0.12em] font-['var(--font-playfair)']">
-              Need help choosing?
+              {dictionary.contact.helpTitle}
             </h2>
             <p className="text-stone-300 text-lg leading-relaxed font-light tracking-wide max-w-2xl mx-auto mb-8">
-              Send a message with your preferred finish, skin tone, and whether you want a soft everyday shade or a more noticeable glossy look.
+              {dictionary.contact.helpText}
             </p>
             <a
               href={socialLinks.whatsapp}
@@ -48,7 +52,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               className="inline-block px-10 py-4 bg-white text-stone-900 text-sm tracking-[0.25em] hover:bg-stone-100 transition-all duration-300"
             >
-              CONTACT ON WHATSAPP
+              {dictionary.home.contactWhatsapp}
             </a>
           </div>
         </div>
