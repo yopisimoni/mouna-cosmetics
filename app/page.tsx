@@ -1,34 +1,12 @@
 import Image from "next/image";
+import { SiteFooter } from "./components/SiteFooter";
+import { SiteHeader } from "./components/SiteHeader";
+import { socialLinks } from "./components/site-data";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-stone-50 font-sans">
-      {/* Sticky Navbar */}
-      <nav className="sticky top-0 z-50 bg-stone-50/95 backdrop-blur-md border-b border-stone-200/50 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex-shrink-0">
-              <div className="flex flex-col">
-                <h1 className="text-2xl font-light tracking-[0.25em] text-stone-900 font-['var(--font-playfair)'] leading-none">MOUNA</h1>
-                <span className="text-[0.6rem] tracking-[0.4em] text-stone-500 mt-1 uppercase">Cosmetics</span>
-              </div>
-            </div>
-            <div className="hidden md:flex space-x-12">
-              <a href="#story" className="text-stone-600 hover:text-stone-900 transition-all duration-300 text-sm tracking-[0.15em] font-light">Story</a>
-              <a href="#products" className="text-stone-600 hover:text-stone-900 transition-all duration-300 text-sm tracking-[0.15em] font-light">Products</a>
-              <a href="#gallery" className="text-stone-600 hover:text-stone-900 transition-all duration-300 text-sm tracking-[0.15em] font-light">Gallery</a>
-              <a href="#contact" className="text-stone-600 hover:text-stone-900 transition-all duration-300 text-sm tracking-[0.15em] font-light">Contact</a>
-            </div>
-            <div className="md:hidden">
-              <button className="text-stone-600 hover:text-stone-900 transition-colors">
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <SiteHeader />
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -79,19 +57,19 @@ export default function Home() {
           <h2 className="text-4xl sm:text-5xl font-light text-stone-900 mb-16 text-center tracking-[0.15em] font-['var(--font-playfair)']">Featured Products</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-6 text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="aspect-[3/4] mb-6 flex items-center justify-center overflow-hidden bg-stone-100">
+              <div className="relative aspect-[3/4] mb-6 flex items-center justify-center overflow-hidden bg-stone-100">
                 <Image
                   src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.04.jpeg"
                   alt="Aura Lip Gloss"
-                  width={300}
-                  height={400}
+                  fill
+                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <h3 className="text-stone-900 font-light mb-2 tracking-wide text-lg">Aura Lip Gloss</h3>
               <p className="text-stone-600 text-sm font-light tracking-wide mb-3">125dh</p>
               <a
-                href="https://wa.me/"
+                href={socialLinks.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-2 border border-stone-900 text-stone-900 text-xs tracking-[0.2em] hover:bg-stone-900 hover:text-white transition-all duration-300"
@@ -100,19 +78,19 @@ export default function Home() {
               </a>
             </div>
             <div className="bg-white p-6 text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="aspect-[3/4] mb-6 flex items-center justify-center overflow-hidden bg-stone-100">
+              <div className="relative aspect-[3/4] mb-6 flex items-center justify-center overflow-hidden bg-stone-100">
                 <Image
                   src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.05.jpeg"
                   alt="Candy Lip Gloss"
-                  width={300}
-                  height={400}
+                  fill
+                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <h3 className="text-stone-900 font-light mb-2 tracking-wide text-lg">Candy Lip Gloss</h3>
               <p className="text-stone-600 text-sm font-light tracking-wide mb-3">125dh</p>
               <a
-                href="https://wa.me/"
+                href={socialLinks.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-2 border border-stone-900 text-stone-900 text-xs tracking-[0.2em] hover:bg-stone-900 hover:text-white transition-all duration-300"
@@ -121,19 +99,19 @@ export default function Home() {
               </a>
             </div>
             <div className="bg-white p-6 text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="aspect-[3/4] mb-6 flex items-center justify-center overflow-hidden bg-stone-100">
+              <div className="relative aspect-[3/4] mb-6 flex items-center justify-center overflow-hidden bg-stone-100">
                 <Image
                   src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.06.jpeg"
                   alt="Amour Lip Gloss"
-                  width={300}
-                  height={400}
+                  fill
+                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <h3 className="text-stone-900 font-light mb-2 tracking-wide text-lg">Amour Lip Gloss</h3>
               <p className="text-stone-600 text-sm font-light tracking-wide mb-3">125dh</p>
               <a
-                href="https://wa.me/"
+                href={socialLinks.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-2 border border-stone-900 text-stone-900 text-xs tracking-[0.2em] hover:bg-stone-900 hover:text-white transition-all duration-300"
@@ -309,11 +287,11 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
           <h2 className="text-4xl sm:text-5xl font-light text-white mb-8 tracking-[0.15em] font-['var(--font-playfair)']">Get in Touch</h2>
           <p className="text-stone-300 text-lg sm:text-xl mb-12 font-light tracking-wide">
-            Follow our journey on Instagram or reach out via WhatsApp for inquiries.
+            Follow our journey on Instagram and TikTok, or reach out via WhatsApp for inquiries.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <a
-              href="https://instagram.com"
+              href={socialLinks.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="px-10 py-4 bg-white text-stone-900 text-sm tracking-[0.25em] hover:bg-stone-100 transition-all duration-300 hover:scale-105 hover:shadow-xl"
@@ -321,7 +299,15 @@ export default function Home() {
               FOLLOW ON INSTAGRAM
             </a>
             <a
-              href="https://wa.me/"
+              href={socialLinks.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-10 py-4 bg-stone-100 text-stone-900 text-sm tracking-[0.25em] hover:bg-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            >
+              FOLLOW ON TIKTOK
+            </a>
+            <a
+              href={socialLinks.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="px-10 py-4 border border-white/60 text-white text-sm tracking-[0.25em] hover:bg-white hover:text-stone-900 transition-all duration-300 hover:scale-105 hover:shadow-xl backdrop-blur-sm"
@@ -332,36 +318,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-stone-950 text-stone-400 py-16">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-            <div>
-              <h3 className="text-white text-2xl font-light mb-6 tracking-[0.2em] font-['var(--font-playfair)']">MOUNA</h3>
-              <p className="text-sm font-light tracking-wide leading-relaxed">Luxury cosmetics for the modern individual.</p>
-            </div>
-            <div>
-              <h3 className="text-white text-lg font-light mb-6 tracking-[0.15em]">Quick Links</h3>
-              <ul className="space-y-3 text-sm font-light tracking-wide">
-                <li><a href="#story" className="hover:text-white transition-colors duration-300">Our Story</a></li>
-                <li><a href="#products" className="hover:text-white transition-colors duration-300">Products</a></li>
-                <li><a href="#gallery" className="hover:text-white transition-colors duration-300">Gallery</a></li>
-                <li><a href="#contact" className="hover:text-white transition-colors duration-300">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-white text-lg font-light mb-6 tracking-[0.15em]">Connect</h3>
-              <ul className="space-y-3 text-sm font-light tracking-wide">
-                <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">Instagram</a></li>
-                <li><a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">WhatsApp</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-stone-800 pt-8 text-center text-sm font-light tracking-wide">
-            <p>&copy; 2026 Mouna Cosmetics. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
