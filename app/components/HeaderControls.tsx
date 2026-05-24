@@ -36,15 +36,15 @@ export function HeaderControls() {
       <label className="sr-only" htmlFor="mouna-language">
         {dictionary.common.language}
       </label>
-      <div className="flex items-center border border-stone-300 bg-white/70 px-2 py-1 text-stone-700">
-        <span className="mr-1 text-[0.55rem] uppercase tracking-[0.16em] text-stone-500">
+      <div className="flex items-center border border-stone-200 bg-white px-2 py-1 text-stone-500">
+        <span className="mr-1 text-[0.5rem] uppercase tracking-[0.16em] text-stone-400">
           {selectedLanguage.shortLabel}
         </span>
         <select
           id="mouna-language"
           value={language}
           onChange={(event) => handleLanguageChange(event.target.value)}
-          className="max-w-20 bg-transparent text-[0.6rem] uppercase tracking-[0.1em] outline-none"
+          className="max-w-16 bg-transparent text-[0.55rem] uppercase tracking-[0.1em] outline-none cursor-pointer"
           aria-label={dictionary.common.language}
         >
           {languages.map((item) => (
@@ -58,7 +58,7 @@ export function HeaderControls() {
         type="button"
         onClick={handleThemeToggle}
         aria-pressed={theme === "dark"}
-        className="border border-stone-300 bg-white/70 px-2.5 py-1 text-[0.6rem] uppercase tracking-[0.14em] text-stone-700 hover:border-stone-900 hover:text-stone-900 transition-colors duration-300"
+        className="border border-stone-200 bg-white px-2 py-1 text-[0.55rem] uppercase tracking-[0.14em] text-stone-500 hover:border-stone-400 hover:text-stone-900 transition-colors duration-300"
       >
         {theme === "dark" ? dictionary.common.dark : dictionary.common.light}
       </button>

@@ -77,6 +77,56 @@ select {
   background-color: rgb(10 8 7 / 0.96);
 }
 
+.dark header.bg-white {
+  background-color: #0c0a09;
+}
+
+.dark footer.bg-white {
+  background-color: #0c0a09;
+}
+
+.dark footer .text-stone-900 {
+  color: #fafaf9;
+}
+
+.dark footer .text-stone-500,
+.dark footer .text-stone-600 {
+  color: #d6d3d1;
+}
+
+.dark footer .text-stone-400 {
+  color: #a8a29e;
+}
+
+.dark footer .border-stone-200\/60,
+.dark footer .border-stone-200 {
+  border-color: rgb(120 113 108 / 0.4);
+}
+
+.dark footer .bg-stone-50\/50 {
+  background-color: rgb(28 23 20 / 0.6);
+}
+
+.dark footer input {
+  background-color: #1c1917;
+  border-color: rgb(120 113 108 / 0.4);
+  color: #fafaf9;
+}
+
+.dark footer input::placeholder {
+  color: #78716c;
+}
+
+.dark footer button.bg-stone-900 {
+  background-color: #fafaf9;
+  color: #1c1917;
+  border-color: #fafaf9;
+}
+
+.dark footer button.bg-stone-900:hover {
+  background-color: #e7e5e4;
+}
+
 .dark .bg-stone-50\/50 {
   background-color: #110e0c;
 }
