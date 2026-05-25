@@ -36,7 +36,7 @@ export function HeaderControls() {
       <label className="sr-only" htmlFor="mouna-language">
         {dictionary.common.language}
       </label>
-      <div className="flex items-center border border-stone-200 bg-white px-2 py-1 text-stone-500">
+      <div className="flex items-center border border-stone-200 bg-white px-2 py-1 text-stone-500 HeaderControls-select">
         <span className="mr-1 text-[0.5rem] uppercase tracking-[0.16em] text-stone-400">
           {selectedLanguage.shortLabel}
         </span>
@@ -58,7 +58,7 @@ export function HeaderControls() {
         type="button"
         onClick={handleThemeToggle}
         aria-pressed={theme === "dark"}
-        className="border border-stone-200 bg-white px-2 py-1 text-[0.55rem] uppercase tracking-[0.14em] text-stone-500 hover:border-stone-400 hover:text-stone-900 transition-colors duration-300"
+        className="border border-stone-200 bg-white px-2 py-1 text-[0.55rem] uppercase tracking-[0.14em] text-stone-500 hover:border-stone-400 hover:text-stone-900 transition-colors duration-300 HeaderControls-theme"
       >
         {theme === "dark" ? dictionary.common.dark : dictionary.common.light}
       </button>
