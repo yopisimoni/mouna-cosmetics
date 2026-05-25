@@ -16,6 +16,7 @@ export function SiteFooter() {
   const careLinks = [
     { href: "/contact", label: "Contact" },
     { href: "/faq", label: "FAQ" },
+    { href: "/shipping-returns", label: "Shipping & Returns" },
     { href: getWhatsappOrderLink(), label: "Order via WhatsApp", external: true },
   ];
   const legalLinks = [

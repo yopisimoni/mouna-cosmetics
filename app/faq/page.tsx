@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { PageHero } from "../components/PageHero";
 import { PageShell } from "../components/PageShell";
 import { useI18n } from "../components/i18n";
@@ -22,6 +23,21 @@ export default function FaqPage() {
               <p className="text-stone-600 leading-relaxed font-light tracking-wide">{answer}</p>
             </div>
           ))}
+        </div>
+      </section>
+      <section className="pb-20 sm:pb-28 bg-white">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="border border-stone-200 bg-stone-50 p-8 text-center">
+            <p className="text-sm font-light text-stone-600 leading-relaxed mb-4">
+              For detailed shipping, return, and payment policies, visit our dedicated page.
+            </p>
+            <Link
+              href="/shipping-returns"
+              className="inline-block bg-stone-900 text-white px-8 py-3 text-xs uppercase tracking-[0.22em] hover:bg-stone-800 transition-colors duration-300"
+            >
+              View Shipping & Returns
+            </Link>
+          </div>
         </div>
       </section>
     </PageShell>
