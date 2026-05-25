@@ -36,16 +36,16 @@ export function SiteHeader() {
           {/* Right icons — controls + account + search + cart */}
           <div className="flex items-center justify-end gap-3 xl:gap-4">
             <HeaderControls />
-            {/* Account icon placeholder */}
-            <button
-              type="button"
+            {/* Account icon — links to sign in */}
+            <Link
+              href="/signin"
               aria-label="Account"
               className="text-stone-500 hover:text-stone-900 transition-colors"
             >
               <svg className="h-[18px] w-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
-            </button>
+            </Link>
             {/* Search icon placeholder */}
             <button
               type="button"
