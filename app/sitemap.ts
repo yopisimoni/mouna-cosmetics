@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://mounacosmetics.com";
+  // TODO: Replace with real domain when custom domain is set up
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://mouna-cosmetics.vercel.app";
 
   const routes = [
     { path: "", priority: 1.0, changeFrequency: "weekly" as const },

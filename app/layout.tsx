@@ -16,7 +16,8 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = "https://mounacosmetics.com";
+// TODO: Replace with real domain when custom domain is set up
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://mouna-cosmetics.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

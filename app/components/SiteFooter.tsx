@@ -26,6 +26,46 @@ export function SiteFooter() {
   return (
     <footer className="bg-white border-t border-stone-200/60 text-stone-600 py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        {/* Trust / Delivery Info Bar */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 mb-14 pb-14 border-b border-stone-200/60">
+          <div className="text-center">
+            <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-stone-100 flex items-center justify-center text-stone-600">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h4 className="text-xs font-medium text-stone-900 tracking-wide mb-1">Payment on Delivery</h4>
+            <p className="text-[0.65rem] text-stone-500 font-light">Pay when you receive your order</p>
+          </div>
+          <div className="text-center">
+            <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-stone-100 flex items-center justify-center text-stone-600">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+              </svg>
+            </div>
+            <h4 className="text-xs font-medium text-stone-900 tracking-wide mb-1">Free Shipping</h4>
+            <p className="text-[0.65rem] text-stone-500 font-light">On orders from 395dh</p>
+          </div>
+          <div className="text-center">
+            <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-stone-100 flex items-center justify-center text-stone-600">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </div>
+            <h4 className="text-xs font-medium text-stone-900 tracking-wide mb-1">Easy Returns</h4>
+            <p className="text-[0.65rem] text-stone-500 font-light">7-day exchange policy</p>
+          </div>
+          <div className="text-center">
+            <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-stone-100 flex items-center justify-center text-stone-600">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+            </div>
+            <h4 className="text-xs font-medium text-stone-900 tracking-wide mb-1">WhatsApp Ordering</h4>
+            <p className="text-[0.65rem] text-stone-500 font-light">Chat with us to place your order</p>
+          </div>
+        </div>
+
         {/* Top section: brand + newsletter */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 mb-14">
           <div>
