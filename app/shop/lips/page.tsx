@@ -1,13 +1,18 @@
+"use client";
+
 import { ProductCard } from "../../components/ShopPreview";
 import { PageHero } from "../../components/PageHero";
 import { PageShell } from "../../components/PageShell";
+import { useI18n } from "../../components/i18n";
 import { getWhatsappOrderLink } from "../../components/site-data";
 
 export default function LipsPage() {
+  const { dictionary } = useI18n();
+
   return (
     <PageShell>
       <PageHero
-        eyebrow="Lips"
+        eyebrow={dictionary.common.lips}
         title="Gloss with a polished finish"
         description="Shop Mouna Lip Gloss in Aura, Candy, and Amour. Orders are still handled personally through WhatsApp."
       />
@@ -22,7 +27,7 @@ export default function LipsPage() {
             rel="noopener noreferrer"
             className="inline-block bg-stone-900 text-white px-8 py-4 text-sm uppercase tracking-[0.24em] hover:bg-stone-800 transition-colors duration-300"
           >
-            Order via WhatsApp
+            {dictionary.common.orderWhatsapp}
           </a>
         </div>
       </section>

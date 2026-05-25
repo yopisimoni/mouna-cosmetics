@@ -29,13 +29,13 @@ export default function FaqPage() {
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="border border-stone-200 bg-stone-50 p-8 text-center">
             <p className="text-sm font-light text-stone-600 leading-relaxed mb-4">
-              For detailed shipping, return, and payment policies, visit our dedicated page.
+              {dictionary.common.faqShippingCta}
             </p>
             <Link
               href="/shipping-returns"
               className="inline-block bg-stone-900 text-white px-8 py-3 text-xs uppercase tracking-[0.22em] hover:bg-stone-800 transition-colors duration-300"
             >
-              View Shipping & Returns
+              {dictionary.common.viewShippingReturns}
             </Link>
           </div>
         </div>

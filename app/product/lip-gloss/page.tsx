@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { PageShell } from "../../components/PageShell";
+import { useI18n } from "../../components/i18n";
 import { getWhatsappMessageLink } from "../../components/site-data";
 
 const shades = ["Aura", "Candy", "Amour"];
@@ -42,6 +43,7 @@ const miniFaqs = [
 ];
 
 export default function LipGlossProductPage() {
+  const { dictionary } = useI18n();
   const [shade, setShade] = useState(shades[0]);
   const [quantity, setQuantity] = useState(1);
   const [bundle, setBundle] = useState(bundleOptions[0].label);
@@ -77,8 +79,8 @@ export default function LipGlossProductPage() {
 
           <div className="lg:sticky lg:top-32 self-start">
             <div className="flex items-center justify-between gap-4 mb-5">
-              <p className="text-xs uppercase tracking-[0.3em] text-stone-500">Lips</p>
-              <p className="text-xs uppercase tracking-[0.18em] text-stone-500">Order via WhatsApp</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-stone-500">{dictionary.common.lips}</p>
+              <p className="text-xs uppercase tracking-[0.18em] text-stone-500">{dictionary.common.orderWhatsapp}</p>
             </div>
             <h1 className="text-4xl sm:text-5xl font-light text-stone-900 mb-5 tracking-[0.12em] font-['var(--font-playfair)']">
               Mouna Lip Gloss
@@ -91,8 +93,8 @@ export default function LipGlossProductPage() {
             <div className="space-y-8">
               <div>
                 <div className="flex items-center justify-between gap-4 mb-4">
-                  <p className="text-xs uppercase tracking-[0.22em] text-stone-500">Shade</p>
-                  <p className="text-sm font-light text-stone-600">Selected: {shade}</p>
+                  <p className="text-xs uppercase tracking-[0.22em] text-stone-500">{dictionary.common.shade}</p>
+                  <p className="text-sm font-light text-stone-600">{dictionary.common.selected}: {shade}</p>
                 </div>
                 <div className="grid grid-cols-3 gap-3">
                   {shades.map((item) => (
@@ -113,7 +115,7 @@ export default function LipGlossProductPage() {
               </div>
 
               <div>
-                <p className="text-xs uppercase tracking-[0.22em] text-stone-500 mb-4">Quantity</p>
+                <p className="text-xs uppercase tracking-[0.22em] text-stone-500 mb-4">{dictionary.common.quantity}</p>
                 <div className="inline-flex border border-stone-200">
                   <button
                     type="button"
@@ -136,7 +138,7 @@ export default function LipGlossProductPage() {
               </div>
 
               <div>
-                <p className="text-xs uppercase tracking-[0.22em] text-stone-500 mb-4">Gloss Bundles</p>
+                <p className="text-xs uppercase tracking-[0.22em] text-stone-500 mb-4">{dictionary.common.glossBundles}</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {bundleOptions.map((option) => (
                     <button
@@ -163,12 +165,12 @@ export default function LipGlossProductPage() {
                 rel="noopener noreferrer"
                 className="block w-full text-center bg-stone-900 text-white px-8 py-4 text-sm uppercase tracking-[0.24em] hover:bg-stone-800 transition-colors duration-300"
               >
-                Order via WhatsApp
+                {dictionary.common.orderWhatsapp}
               </a>
               <div className="border border-stone-200 bg-stone-50 p-4 text-sm font-light tracking-wide text-stone-600">
-                <p className="mb-1 text-stone-900">Order summary</p>
-                <p>Shade: {shade} · Bundle: {bundle} · Quantity: {quantity}</p>
-                <p className="mt-2 text-xs text-stone-500">Cart coming soon. Orders are confirmed by WhatsApp.</p>
+                <p className="mb-1 text-stone-900">{dictionary.common.orderSummary}</p>
+                <p>{dictionary.common.shade}: {shade} · {dictionary.common.glossBundles}: {bundle} · {dictionary.common.quantity}: {quantity}</p>
+                <p className="mt-2 text-xs text-stone-500">{dictionary.common.cartComingSoonNote}</p>
               </div>
             </div>
           </div>
@@ -198,12 +200,12 @@ export default function LipGlossProductPage() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
             <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-stone-500 mb-4">Bundles</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-stone-500 mb-4">{dictionary.common.glossBundles}</p>
               <h2 className="text-4xl font-light text-stone-900 tracking-[0.12em] font-['var(--font-playfair)']">
-                Palette & Gloss Sets
+                {dictionary.common.paletteGlossSets}
               </h2>
             </div>
-            <p className="text-stone-600 font-light tracking-wide">Free shipping from 395dh</p>
+            <p className="text-stone-600 font-light tracking-wide">{dictionary.common.freeShippingFrom}</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {paletteBundles.map((option) => (
@@ -219,9 +221,9 @@ export default function LipGlossProductPage() {
 
       <section className="py-20 sm:py-28 bg-white">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
-          <p className="text-xs uppercase tracking-[0.3em] text-stone-500 mb-4 text-center">Product FAQ</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-stone-500 mb-4 text-center">{dictionary.common.productFaq}</p>
           <h2 className="text-4xl font-light text-stone-900 tracking-[0.12em] font-['var(--font-playfair)'] text-center mb-10">
-            Before You Order
+            {dictionary.common.beforeYouOrder}
           </h2>
           <div className="space-y-4">
             {miniFaqs.map(([question, answer]) => (

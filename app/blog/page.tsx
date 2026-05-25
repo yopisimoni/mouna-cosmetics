@@ -74,7 +74,7 @@ export default function BlogPage() {
                     href="/coming-soon"
                     className="inline-block text-xs uppercase tracking-[0.25em] text-stone-900 border-b border-stone-900 pb-0.5 hover:text-stone-600 hover:border-stone-600 transition-colors duration-300"
                   >
-                    Read More
+                    {dictionary.common.readMore}
                   </Link>
                 </div>
               </article>

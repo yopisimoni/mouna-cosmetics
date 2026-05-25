@@ -197,15 +197,15 @@ export default function Home() {
       {/* How to Order */}
       <section className="py-16 sm:py-20 bg-stone-50/50">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
-          <p className="text-xs tracking-[0.35em] uppercase text-stone-500 mb-4">Simple steps</p>
+          <p className="text-xs tracking-[0.35em] uppercase text-stone-500 mb-4">{dictionary.common.simpleSteps}</p>
           <h2 className="text-3xl sm:text-4xl font-light text-stone-900 mb-10 tracking-[0.12em] font-['var(--font-playfair)']">
-            How to Order
+            {dictionary.common.howToOrder}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-left">
             {[
-              { step: "01", title: "Choose your products", desc: "Browse our collection and select your shades, bundles, and quantities." },
-              { step: "02", title: "Order via WhatsApp", desc: "Click the WhatsApp button on any product. Your selections are pre-filled in the message." },
-              { step: "03", title: "Confirm & receive", desc: "We confirm your order, arrange delivery, and you pay on arrival." },
+              { step: "01", title: dictionary.common.step1Title, desc: dictionary.common.step1Desc },
+              { step: "02", title: dictionary.common.step2Title, desc: dictionary.common.step2Desc },
+              { step: "03", title: dictionary.common.step3Title, desc: dictionary.common.step3Desc },
             ].map((item) => (
               <div key={item.step} className="border border-stone-200 bg-white p-6 sm:p-8">
                 <span className="text-3xl sm:text-4xl font-light text-stone-300 font-['var(--font-playfair)'] block mb-4">{item.step}</span>

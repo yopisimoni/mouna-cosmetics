@@ -2,27 +2,30 @@
 
 import Link from "next/link";
 import { PageShell } from "../components/PageShell";
+import { useI18n } from "../components/i18n";
 import { getWhatsappOrderLink } from "../components/site-data";
 
 export default function ForgotPasswordPage() {
+  const { dictionary } = useI18n();
+
   return (
     <PageShell>
       <section className="py-20 sm:py-28 bg-white">
         <div className="max-w-md mx-auto px-6 sm:px-8">
           <div className="text-center mb-10">
-            <p className="text-xs tracking-[0.35em] uppercase text-stone-500 mb-4">Account</p>
+            <p className="text-xs tracking-[0.35em] uppercase text-stone-500 mb-4">{dictionary.common.account}</p>
             <h1 className="text-4xl sm:text-5xl font-light text-stone-900 tracking-[0.12em] font-['var(--font-playfair)']">
-              Forgot Password
+              {dictionary.common.forgotPassword}
             </h1>
             <p className="text-stone-600 font-light tracking-wide mt-4 text-sm">
-              Enter your email and we&#39;ll send you a reset link when accounts launch.
+              {dictionary.common.forgotPasswordDesc}
             </p>
           </div>
 
           <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
             <div>
               <label htmlFor="email" className="block text-xs uppercase tracking-[0.22em] text-stone-500 mb-2">
-                Email
+                {dictionary.common.email}
               </label>
               <input
                 id="email"
@@ -35,7 +38,7 @@ export default function ForgotPasswordPage() {
               type="submit"
               className="w-full bg-stone-900 text-white px-8 py-3 text-xs uppercase tracking-[0.24em] hover:bg-stone-800 transition-colors duration-300"
             >
-              Reset Password
+              {dictionary.common.resetPassword}
             </button>
           </form>
 
@@ -44,13 +47,13 @@ export default function ForgotPasswordPage() {
               href="/signin"
               className="text-xs uppercase tracking-[0.22em] text-stone-500 hover:text-stone-900 transition-colors duration-300"
             >
-              Back to Sign In
+              {dictionary.common.backToSignIn}
             </Link>
           </div>
 
           <div className="mt-10 border border-stone-200 bg-stone-50 p-6 text-center">
             <p className="text-sm font-light text-stone-600 leading-relaxed mb-4">
-              Password reset will be available when accounts launch. For now, order via WhatsApp.
+              {dictionary.common.forgotPasswordComingSoon}
             </p>
             <a
               href={getWhatsappOrderLink()}
@@ -58,7 +61,7 @@ export default function ForgotPasswordPage() {
               rel="noopener noreferrer"
               className="inline-block bg-stone-900 text-white px-6 py-3 text-xs uppercase tracking-[0.22em] hover:bg-stone-800 transition-colors duration-300"
             >
-              Order via WhatsApp
+              {dictionary.common.orderWhatsapp}
             </a>
           </div>
         </div>
