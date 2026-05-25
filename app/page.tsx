@@ -1,10 +1,82 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
 import { useI18n } from "./components/i18n";
 import { getWhatsappOrderLink, socialLinks } from "./components/site-data";
+
+const categoryImages = {
+  lips: "/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.04.jpeg",
+  eyes: "/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.11.jpeg",
+  face: "/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.13.jpeg",
+  skin: "/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.14.jpeg",
+  bundles: "/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.08.jpeg",
+  comingSoon: "/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.07.jpeg",
+};
+
+const categories = [
+  {
+    href: "/shop/lips",
+    label: "Lips",
+    image: categoryImages.lips,
+    copy: "High-shine glosses in soft, everyday shades.",
+  },
+  {
+    href: "/shop/eyes",
+    label: "Eyes",
+    image: categoryImages.eyes,
+    copy: "Palettes and eye essentials for a polished look.",
+  },
+  {
+    href: "/shop/face",
+    label: "Face",
+    image: categoryImages.face,
+    copy: "Complexion launches arriving soon.",
+  },
+  {
+    href: "/shop/skin-body",
+    label: "Skin & Body",
+    image: categoryImages.skin,
+    copy: "Care rituals planned for a future edit.",
+  },
+  {
+    href: "/product/lip-gloss",
+    label: "Bundles",
+    image: categoryImages.bundles,
+    copy: "Save on curated gloss and palette sets.",
+  },
+  {
+    href: "/coming-soon",
+    label: "Coming Soon",
+    image: categoryImages.comingSoon,
+    copy: "New shades, palettes, and beauty edits.",
+  },
+];
+
+const lookCategories = [
+  {
+    label: "Glossy",
+    description: "High-shine finish for a fresh, dewy look.",
+    image: categoryImages.lips,
+  },
+  {
+    label: "Natural",
+    description: "Soft tints that enhance without overpowering.",
+    image: categoryImages.face,
+  },
+  {
+    label: "Nude",
+    description: "Warm, neutral tones for everyday elegance.",
+    image: categoryImages.skin,
+  },
+  {
+    label: "Glam",
+    description: "Bold shimmer and deeper shades for evening.",
+    image: categoryImages.eyes,
+  },
+];
 
 export default function Home() {
   const { dictionary } = useI18n();
@@ -58,6 +130,90 @@ export default function Home() {
             >
               {dictionary.home.contactInstagram}
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Shop by Category */}
+      <section className="py-24 sm:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-16">
+            <p className="text-xs tracking-[0.35em] uppercase text-stone-500 mb-4">Explore</p>
+            <h2 className="text-4xl sm:text-5xl font-light text-stone-900 tracking-[0.12em] font-['var(--font-playfair)']">
+              Shop by Category
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {categories.map((category) => (
+              <Link
+                key={category.href}
+                href={category.href}
+                className="group block border border-stone-200 bg-stone-50 hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
+                  <Image
+                    src={category.image}
+                    alt={category.label}
+                    fill
+                    sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-2xl font-light text-white tracking-[0.12em] font-['var(--font-playfair)']">
+                      {category.label}
+                    </h3>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <p className="text-sm font-light leading-relaxed tracking-wide text-stone-600">
+                    {category.copy}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Shop by Look */}
+      <section className="py-24 sm:py-32 bg-stone-50/50">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-16">
+            <p className="text-xs tracking-[0.35em] uppercase text-stone-500 mb-4">Find your style</p>
+            <h2 className="text-4xl sm:text-5xl font-light text-stone-900 tracking-[0.12em] font-['var(--font-playfair)']">
+              Shop by Look
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {lookCategories.map((look) => (
+              <Link
+                key={look.label}
+                href="/shop/lips"
+                className="group block border border-stone-200 bg-white hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+              >
+                <div className="relative aspect-square overflow-hidden bg-stone-100">
+                  <Image
+                    src={look.image}
+                    alt={look.label}
+                    fill
+                    sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 90vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <h3 className="text-xl font-light text-white tracking-[0.12em] font-['var(--font-playfair)']">
+                      {look.label}
+                    </h3>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <p className="text-xs font-light leading-relaxed tracking-wide text-stone-600">
+                    {look.description}
+                  </p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
