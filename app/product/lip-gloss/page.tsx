@@ -1,12 +1,15 @@
 "use client";
 
-import Image from "next/image";
 import { useMemo, useState } from "react";
+
 import { PageShell } from "../../components/PageShell";
+import { ProductGallery } from "../../components/ProductGallery";
 import { useI18n } from "../../components/i18n";
 import { getWhatsappMessageLink } from "../../components/site-data";
+import { products } from "../../data/products";
 
 const shades = ["Aura", "Candy", "Amour"];
+
 
 const bundleOptions = [
   { label: "1 gloss", price: "125dh", saving: "" },
@@ -48,6 +51,11 @@ export default function LipGlossProductPage() {
   const [quantity, setQuantity] = useState(1);
   const [bundle, setBundle] = useState(bundleOptions[0].label);
 
+  const currentProduct = useMemo(() => {
+    const shadeSlug = shade.toLowerCase();
+    return products.find((p) => p.slug.startsWith(shadeSlug));
+  }, [shade]);
+
   const whatsappLink = useMemo(() => {
     const message = `Hello Mouna Cosmetics, I would like to order Mouna Lip Gloss. Shade: ${shade}. Bundle: ${bundle}. Quantity: ${quantity}.`;
     return getWhatsappMessageLink(message);
@@ -57,25 +65,15 @@ export default function LipGlossProductPage() {
     <PageShell>
       <section className="py-14 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              "/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.04.jpeg",
-              "/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.05.jpeg",
-              "/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.06.jpeg",
-              "/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.08.jpeg",
-            ].map((src, index) => (
-              <div key={src} className="relative aspect-[3/4] overflow-hidden bg-stone-100">
-                <Image
-                  src={src}
-                  alt={`Mouna Lip Gloss ${index + 1}`}
-                  fill
-                  sizes="(min-width: 1024px) 24vw, 45vw"
-                  className="object-cover"
-                  priority={index === 0}
-                />
-              </div>
-            ))}
+          <div>
+            {currentProduct && (
+              <ProductGallery
+                images={currentProduct.images}
+                productName={`Mouna ${shade} Lip Gloss`}
+              />
+            )}
           </div>
+
 
           <div className="lg:sticky lg:top-32 self-start">
             <div className="flex items-center justify-between gap-4 mb-5">

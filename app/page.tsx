@@ -421,7 +421,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
             <div className="aspect-square overflow-hidden hover:scale-105 transition-transform duration-500 cursor-pointer">
               <Image
-                src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.07.jpeg"
+                src="/assets/mouna/gallery/gallery1.jpeg"
                 alt="Gallery 1"
                 width={400}
                 height={400}
@@ -430,7 +430,7 @@ export default function Home() {
             </div>
             <div className="aspect-square overflow-hidden hover:scale-105 transition-transform duration-500 cursor-pointer">
               <Image
-                src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.08.jpeg"
+                src="/assets/mouna/gallery/gallery2.jpeg"
                 alt="Gallery 2"
                 width={400}
                 height={400}
@@ -439,7 +439,7 @@ export default function Home() {
             </div>
             <div className="aspect-square overflow-hidden hover:scale-105 transition-transform duration-500 cursor-pointer">
               <Image
-                src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.09.jpeg"
+                src="/assets/mouna/gallery/gallery3.jpeg"
                 alt="Gallery 3"
                 width={400}
                 height={400}
@@ -448,7 +448,7 @@ export default function Home() {
             </div>
             <div className="aspect-square overflow-hidden hover:scale-105 transition-transform duration-500 cursor-pointer">
               <Image
-                src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.10.jpeg"
+                src="/assets/mouna/gallery/gallery4.jpeg"
                 alt="Gallery 4"
                 width={400}
                 height={400}
@@ -457,7 +457,7 @@ export default function Home() {
             </div>
             <div className="aspect-square overflow-hidden hover:scale-105 transition-transform duration-500 cursor-pointer">
               <Image
-                src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.11.jpeg"
+                src="/assets/mouna/gallery/gallery5.jpeg"
                 alt="Gallery 5"
                 width={400}
                 height={400}
@@ -466,7 +466,7 @@ export default function Home() {
             </div>
             <div className="aspect-square overflow-hidden hover:scale-105 transition-transform duration-500 cursor-pointer">
               <Image
-                src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.13.jpeg"
+                src="/assets/mouna/gallery/gallery6.jpeg"
                 alt="Gallery 6"
                 width={400}
                 height={400}
@@ -475,7 +475,7 @@ export default function Home() {
             </div>
             <div className="aspect-square overflow-hidden hover:scale-105 transition-transform duration-500 cursor-pointer">
               <Image
-                src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.14.jpeg"
+                src="/assets/mouna/gallery/gallery7.jpeg"
                 alt="Gallery 7"
                 width={400}
                 height={400}
@@ -484,7 +484,7 @@ export default function Home() {
             </div>
             <div className="aspect-square overflow-hidden hover:scale-105 transition-transform duration-500 cursor-pointer">
               <Image
-                src="/assets/mouna/WhatsApp Image 2026-05-23 at 11.53.14 (1).jpeg"
+                src="/assets/mouna/gallery/candy gallary.jpeg"
                 alt="Gallery 8"
                 width={400}
                 height={400}
@@ -494,6 +494,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       {/* Contact CTA Section */}
       <section id="contact" className="py-20 sm:py-28 bg-stone-900 text-center">
