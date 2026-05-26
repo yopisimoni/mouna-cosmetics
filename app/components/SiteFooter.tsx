@@ -12,7 +12,9 @@ export function SiteFooter() {
     { href: "/shop/eyes", label: dictionary.common.eyes },
     { href: "/shop/face", label: dictionary.common.face },
     { href: "/shop/skin-body", label: dictionary.common.skinBody },
+    { href: "/gallery", label: "Gallery" },
   ];
+
   const careLinks = [
     { href: "/contact", label: dictionary.common.contactUs },
     { href: "/faq", label: "FAQ" },
