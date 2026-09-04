@@ -2,9 +2,20 @@
 
 A modern cosmetics storefront prototype built with Next.js, React, TypeScript, and Tailwind CSS.
 
+**Live demo:** https://mouna-cosmetics.vercel.app
+
 ## Project goal
 
 This project explores how a beauty and cosmetics brand can present products through a clean, responsive storefront experience while keeping the codebase simple enough to iterate quickly.
+
+## What this project demonstrates
+
+- Responsive ecommerce-style frontend development
+- Modern product presentation and visual hierarchy
+- Next.js application structure
+- Reusable React components
+- Type-safe development with TypeScript
+- Tailwind CSS styling and responsive UI work
 
 ## Stack
 
