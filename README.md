@@ -60,3 +60,8 @@ Active portfolio project / prototype. The repository is public to demonstrate fr
 ---
 
 Built by [Simohamed Amara](https://github.com/yopisimoni).
+
+---
+
+**Portfolio:** https://yopisimoni.github.io  
+**GitHub:** https://github.com/yopisimoni
